@@ -55,6 +55,7 @@ public class TestNGClass {
     public void tear_down(){
         driver.quit();
         System.out.println("4 method");
+        System.out.println("Git Test");
     }
 
 }
