@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -17,9 +19,10 @@ public class TestNGClass {
 
     WebDriver driver;
 
-    @Test(groups = "test1", priority = 0)
+
     @Parameters({"browser","url"})
-    public void SetUp(String browser, String url){
+    @Test(groups = "test1")
+    public void SetUp(@Optional("chrome")String browser,@Optional("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login") String url){
     if(browser.equalsIgnoreCase("chrome")){
         driver=new ChromeDriver();
         driver.manage().window().maximize();
